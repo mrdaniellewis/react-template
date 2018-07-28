@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Increase count
+    0
+  </button>
+</div>
+`;
+
+exports[`shows current current count 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Increase count
+    1
+  </button>
+</div>
+`;

@@ -1,0 +1,147 @@
+{
+  "name": "react-project-template",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "clean": "rm -rfv dist/*",
+    "lint:js": "eslint . --ext .jsx,.js",
+    "lint:css": "stylelint src/**/*.css --syntax scss",
+    "lint": "npm run lint:js && npm run lint:css",
+    "test": "jest",
+    "debug-test": "node inspect node_modules/.bin/jest --runInBand",
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "npm run lint && npm run clean && webpack --mode production"
+  },
+  "author": "Daniel Lewis",
+  "license": "ISC",
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-hot-loader": "^4.3.4",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-react-adapter-future": "^1.1.3",
+    "enzyme-to-json": "^3.3.4",
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.4.2",
+    "mini-css-extract-plugin": "^0.4.1",
+    "minimist": "^1.2.0",
+    "normalize.css": "^8.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
+    "postcss-import": "^11.1.0",
+    "postcss-loader": "^2.1.6",
+    "precss": "^3.1.2",
+    "react-test-renderer": "^16.4.1",
+    "style-loader": "^0.21.0",
+    "stylelint": "^9.4.0",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-scss": "^3.2.0",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.16.3",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "env": {
+      "browser": true
+    },
+    "plugins": [
+      "babel"
+    ],
+    "rules": {
+      "new-cap": "off",
+      "babel/new-cap": "error",
+      "object-curly-spacing": "off",
+      "babel/object-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "quotes": "off",
+      "babel/quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "semi": "off",
+      "babel/semi": [
+        "error",
+        "always"
+      ],
+      "no-unused-expressions": "off",
+      "babel/no-unused-expressions": "error",
+      "react/destructuring-assignment": "off",
+      "react/sort-comp": "off"
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/*.test.{js,jsx}",
+          "**/__jest_setup__/*"
+        ],
+        "env": {
+          "jest": true
+        },
+        "globals": {
+          "mountWithStore": false
+        },
+        "rules": {
+          "import/no-extraneous-dependencies": "off"
+        }
+      }
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "dist"
+  ],
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      [
+        "transform-class-properties",
+        {
+          "spec": true
+        }
+      ],
+      "react-hot-loader/babel"
+    ]
+  },
+  "stylelint": {
+    "extends": "stylelint-config-recommended-scss"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|esetupTestFrameworkScriptFileot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/file-mock.js",
+      "\\.(css|less)$": "<rootDir>/src/__mocks__/style-mock.js"
+    },
+    "restoreMocks": true,
+    "resetModules": true,
+    "setupTestFrameworkScriptFile": "<rootDir>/src/__jest_setup__/index.jsx",
+    "testURL": "http://localhost"
+  }
+}
