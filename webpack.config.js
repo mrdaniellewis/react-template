@@ -18,6 +18,7 @@ module.exports = {
       new OptimizeCSSAssetsPlugin({}),
     ],
   },
+  devtool: mode === 'development' ? 'eval-source-map' : false,
   module: {
     rules: [
       {
